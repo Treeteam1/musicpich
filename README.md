@@ -11,6 +11,3 @@
 Создайте свою ветку для разработки функций (**git checkout -b feature/new-feature**).
 Внесите изменения, сделайте коммит и запушьте их (**git commit -am 'Добавить новую функцию'** и **git push origin feature/new-feature**).
 Создайте новый **pull request** и опишите ваши изменения.
-
-## Ліцензія
-Цей проект розповсюджується під ліцензією **[MIT License](https://chat.openai.com/c/LICENSE)**.
