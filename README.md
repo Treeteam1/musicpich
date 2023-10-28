@@ -12,6 +12,3 @@
 2. Создайте свою ветку для разработки функций (**git checkout -b feature/new-feature**).
 3. Внесите изменения, сделайте коммит и запушьте их (**git commit -am 'Добавить новую функцию'** и **git push origin feature/new-feature**).
 4. Создайте новый **pull request** и опишите ваши изменения.
-=======
-# musicpich
->>>>>>> 016bd50f21b6bdb8dc6047657e36eb828fb2ebec
