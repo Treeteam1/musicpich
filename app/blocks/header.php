@@ -1,9 +1,11 @@
 <?php
   session_start();
 
-  $columns = ["email = ?", "name = ?"];
-  $values = [$_SESSION['login'], $_SESSION['login']];
-  $userResult = \App\Database::selectDatabaseEx("users", $columns, $values, "OR");
+  if(!empty($_SESSION['login'])) {
+    $columns = ["email = ?", "name = ?"];
+    $values = [$_SESSION['login'], $_SESSION['login']];
+    $userResult = \App\Database::selectDatabaseEx("users", $columns, $values, "OR");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +52,7 @@
             <?
             if($userResult['admin'] > 0) {
               ?>
-                <a href="/app/personal.php" class="button stroke-btn">Admin panel</a>
+                <a href="/app/admin/load_music.php" class="button stroke-btn">Admin panel</a>
               <?
             }
           }
