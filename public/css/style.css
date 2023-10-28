@@ -1,0 +1,816 @@
+/* -------------- Reset style ----------------- */
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #151a27;
+  font-family: "Poppins";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+}
+/* -------------------------------------------- */
+:root {
+  --main-color: #37c25e;
+  --red-color: #bd4040;
+  --translucent-main-color: #10361b3d;
+  --translucent-red-color: #b65a5a69;
+}
+.link {
+  text-decoration: none;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Общі стилі */
+.button {
+  border-radius: 12px;
+  border: 2px solid var(--main-color);
+  background: var(--main-color);
+  padding: 16px 38px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.button:hover {
+  background: var(--translucent-main-color);
+  color: var(--main-color);
+}
+.stroke-btn {
+  background: var(--translucent-main-color);
+  color: var(--main-color);
+}
+.stroke-btn:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+.stroke__red-btn {
+  border: 1px solid var(--red-color);
+  background: var(--translucent-red-color);
+  width: 100%;
+  color: #fff;
+  font-family: Montserrat;
+}
+.stroke__red-btn:hover {
+  background: var(--red-color);
+  color: #fff;
+}
+.green__span {
+  text-decoration: none;
+  color: #37c25e;
+}
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 16px 0;
+}
+/* ~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~ */
+.header {
+  background-image: url("../assets/images/main-block-background.png");
+  background-size: cover;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.websites-name {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.nav-ul {
+  display: flex;
+  gap: 32px;
+  position: relative;
+  left: 50px;
+}
+.nav-item-link {
+  color: #fff;
+  font-family: Plus Jakarta Sans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+/* ~~~~~~~~~~~~~~~~ Форма ~~~~~~~~~~~~~~~ */
+form {
+  margin: 12% auto;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  background: #0c172c;
+}
+.form__items {
+  margin-top: 35px;
+}
+.form__item {
+  margin-top: 21px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 145px;
+  text-align: left;
+}
+/* ------------ Чекбокс ------------ */
+.form__checkbox-items {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin: 21px 0;
+}
+/* Ховаємо оригінальний чекбокс */
+.form__checkbox {
+  display: none;
+}
+/* Стилізуємо мітку (label) */
+.form__checkbox-label {
+  position: relative;
+  top: 3px;
+  width: fit-content;
+  padding-left: 30px; /* резервуємо місце під галочку */
+  cursor: pointer;
+  line-height: 28px; /* Встановлюємо висоту рядка для вирівнювання галочки */
+}
+/* Стилізація галочки (SVG іконка) */
+.form__checkbox-label::before {
+  content: ""; /* Додайте цей рядок для встановлення контенту */
+  width: 19px; /* ширина галочки */
+  height: 19px; /* висота галочки */
+  background-color: rgba(215, 250, 224, 0.247);
+  border-radius: 5px; /* закруглені кути галочки */
+  transition: 0.1s;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* Стилізація галочки в стані "провірено" */
+.form__checkbox:checked + .form__checkbox-label::before {
+  content: "\2713"; /* Unicode символ для галочки (✓) */
+  font-size: 10px; /* Розмір шрифту для символу галочки */
+  text-align: center; /* Вирівнювання тексту по центру */
+  line-height: 20.1px; /* Встановлюємо висоту рядка для вирівнювання символу галочки */
+  color: #000; /* Колір галочки в стані "провірено" */
+  background-color: #37c25e;
+}
+/* ---- Основна декорація інпуту ---- */
+label,
+input::placeholder,
+input {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+}
+label {
+  color: #adadad;
+}
+input::placeholder {
+  position: relative;
+  top: -3px;
+  color: #b4b4b49a;
+}
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #595959;
+  padding: 5px 0 5px 12px;
+  margin-top: 7px;
+}
+input:focus {
+  outline: none;
+}
+.input-flex-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.search-input {
+  padding: 12px 64px 12px 12px;
+  height: min-content;
+  border-radius: 12px;
+  border: none;
+  background: #2c3241;
+  min-width: 375px;
+}
+.search-input::placeholder {
+  position: relative;
+  top: 1px;
+}
+.search-input::placeholder,
+.search-input {
+  color: var(--neutural-grey-1, #a7aab5);
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 16px;
+}
+.search-image {
+  position: relative;
+  left: -46px;
+}
+/* ---- Інпут зі скриттям тексту ---- */
+.form__item-hide_text {
+  display: flex;
+}
+.visibility-off {
+  position: relative;
+  top: 5px;
+  left: 7px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.visibility-on {
+  position: relative;
+  top: 5px;
+  left: 7px;
+  height: 20px;
+  width: 20px;
+  display: none;
+  cursor: pointer;
+}
+.text-container {
+  text-align: center;
+}
+.form__bottom-description {
+  margin-top: 12px;
+  color: #f0f0f0;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.background-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* затемнення з фоновим кольором чорного (RGB) та прозорістю 0.5 */
+}
+
+/* первая и главная секция */
+.hero-section {
+  margin: 77px 0 136px 0;
+  padding-top: 125px;
+  height: 100vh;
+  text-align: center;
+}
+.hero-title {
+  background: radial-gradient(
+    160% 160% at 50% 24.29%,
+    #f9f4ed 0%,
+    rgba(238, 231, 220, 0) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Anton;
+  font-size: 132px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.hero-subtitle {
+  color: #b4babc;
+  font-feature-settings: "liga" off;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+/* вторая секция с вариантами где можно использовать нашу музыку */
+.downloads-music {
+  padding-bottom: 80px;
+}
+.downloads-music > .container {
+  text-align: center;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  border: none;
+  border-radius: 40px;
+  background: radial-gradient(
+    350.94% 343.49% at 51.82% -159.87%,
+    #404657 0%,
+    rgba(64, 70, 87, 0) 100%
+  );
+  backdrop-filter: blur(34px);
+}
+.title {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.22;
+}
+.subtitle {
+  color: #a7aab5;
+  font-feature-settings: "liga" off;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.music-variants-ul {
+  display: flex;
+  gap: 96px;
+}
+.music-variants-ul-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.music-variants-ul-item > p {
+  color: #e3e6f0;
+  font-feature-settings: "liga" off;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.33;
+}
+
+/* поисковик треков */
+.found-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.found-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 21px;
+}
+
+/* выпадающие меню для фильтров */
+.dropdowns-ul {
+  display: flex;
+  gap: 16px;
+}
+.dropdown-toggle {
+  background: transparent;
+  padding: 12px 12px 12px 16px;
+  border: 1px solid #5b5c61;
+  border-radius: 12px;
+  color: #e3e6f0;
+  display: flex;
+  justify-content: space-between;
+  width: 176px;
+  cursor: pointer;
+}
+.vocal {
+  width: 260px;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown-btn {
+  border: solid #e3e6f0;
+  border-width: 0 2px 2px 0;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  justify-self: self-end;
+}
+.dropdown-menu {
+  display: flex;
+  position: absolute;
+  margin-top: 4px;
+  width: 176px;
+  padding: 8px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: none;
+  border-radius: 12px;
+  background: radial-gradient(
+    206.98% 206.67% at 50% -23.01%,
+    #404657 0%,
+    rgba(64, 70, 87, 0) 100%
+  );
+  backdrop-filter: blur(34px);
+  height: 176px;
+}
+.dropdown-item {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #e3e6f0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: 0.3s;
+  width: 144px;
+  cursor: pointer;
+}
+.hide {
+  display: none;
+}
+
+/* ---------- Філтр ---------- */
+.filters {
+  min-width: 175px;
+  margin-right: 45px;
+}
+.filters-flex-container {
+  display: flex;
+  padding-top: 24px;
+}
+.filter-btn {
+  display: flex;
+  height: min-content;
+  gap: 5px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  margin-bottom: 21px;
+}
+.filter-btn:hover,
+.filter-btn:focus {
+  outline: none;
+  cursor: pointer;
+}
+/* -------- Акордеон --------- */
+.accordion__button {
+  color: #a7aab5;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 2px 17px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+  border-radius: 7px;
+  margin-top: 16px;
+}
+.accordion__button:hover {
+  background-color: #a7aab518;
+}
+.accordion__button:after {
+  content: "\002B";
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.accordion__active:after {
+  content: "\2212";
+}
+.accordion__panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+.accordion__panel-list {
+  list-style: none;
+  padding: 17px 5px 5px;
+}
+.accordion__panel-list li {
+  color: #e3e6f0;
+}
+/* список песен */
+.musics-ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  row-gap: 16px;
+}
+.musics-ul-item {
+  width: 280px;
+  border: none;
+  border-radius: 12px;
+  background: #1d212e;
+}
+.track-cover-img {
+  border-radius: 12px 12px 0 0;
+}
+.music-info {
+  border-radius: 0px 0px 12px 12px;
+  background: radial-gradient(
+    242.23% 241.86% at 53.72% -58.25%,
+    #404657 0%,
+    rgba(64, 70, 87, 0) 100%
+  );
+  backdrop-filter: blur(34px);
+  padding: 12px;
+}
+.name-of-music,
+.name-of-author {
+  color: #fff;
+  font-feature-settings: "liga" off;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.name-of-author {
+  color: #a7aab5;
+  font-weight: 400;
+}
+hr {
+  stroke-width: 1px;
+  stroke: #a7aab5;
+  opacity: 0.2;
+}
+.music-info-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.interactive-music-ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.interactive-music-item {
+  cursor: pointer;
+}
+.save {
+  stroke: #a7aab5;
+}
+.play-music-btn {
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  border: none;
+  position: relative;
+  left: -10px;
+  top: -3px;
+}
+.center_container {
+  display: flex;
+  justify-content: center;
+}
+/* Footer */
+.main-footer > .container {
+  display: flex;
+  justify-content: space-between;
+}
+.main-footer {
+  padding-top: 44px;
+  padding-bottom: 56px;
+  background: #1d212e;
+  margin-top: 80px;
+}
+.descr {
+  color: #a7aab5;
+  font-feature-settings: "liga" off;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+.footer-ul {
+  display: flex;
+  gap: 100px;
+}
+.footer-ul-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.footer-ul-item-title,
+.product-link,
+.support-link,
+.our-social-signature {
+  color: #5b5c61;
+  font-feature-settings: "liga" off;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.product-ul,
+.support-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.product-link,
+.support-link,
+.our-social-signature {
+  color: #a7aab5;
+  font-weight: 500;
+}
+.social-ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.social-link > svg {
+  fill: #a7aab5;
+  transition: 0.3s;
+}
+.social-link > svg:hover {
+  fill: #fff;
+}
+.copyright {
+  padding: 24px 0;
+  text-align: center;
+  color: #5b5c61;
+  font-feature-settings: "liga" off;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* уведомление о новом треке */
+.personal__information {
+  padding-top: 6px;
+  padding-bottom: 10px;
+}
+.personal__information > .container {
+  width: 95%;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(168deg, #1b5f1e -68.78%, #1e2538 39.19%);
+  box-shadow: 0px 4px 89px 0px rgba(0, 0, 0, 0);
+  padding: 31px 0 31px 73px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.personal__information-title,
+.personal__information-text,
+.personal__information-text span {
+  font-family: Montserrat;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.personal__information-text,
+.personal__information-text span {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+.personal__information-text span,
+.personal__information-title {
+  color: #4b9e4e;
+}
+/* интерактивное меню */
+.personal-flex-container {
+  display: flex;
+  gap: 180px;
+  padding-left: 43px;
+}
+.main-menu > .container {
+  width: 490px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 19px 19px 10px;
+  border-radius: 24px;
+  background: rgba(26, 33, 48, 0.38);
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 34px 31px 31px;
+  gap: 5px;
+  border-radius: 10px;
+  background: #1e2538;
+  box-shadow: 0px 4px 89px 0px rgba(0, 0, 0, 0);
+}
+.menu-button > svg {
+  fill: #2f3a54;
+  transition: 0.3s;
+}
+.menu-button {
+  padding: 10px 0px 10px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 13px;
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Montserrat;
+  font-size: 17px;
+  letter-spacing: 1.445px;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.menu-button:hover {
+  background: #222a41;
+  cursor: pointer;
+}
+.menu-button:active {background: var(--main-color);}
+.menu-button:active svg {fill: var(--main-color);}
+.prem-button {
+  padding: 138px 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(151deg, #4b9e4e -11.61%, #3b4b70 172.24%),
+    rgba(75, 158, 78, 0);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+.acc__info {margin-top: 18px;}
+.acc__info > .container {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+.acc__flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  vertical-align: middle;
+}
+.acc__nickname {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+.premium-status {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 24px;
+  background: #1e2538;
+  width: 214px;
+  flex-shrink: 0;
+  text-align: center;
+  justify-content: flex-start;
+  padding-left: 37px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.premium-status > p {
+  margin-right: 25px;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

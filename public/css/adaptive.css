@@ -1,0 +1,46 @@
+@media (max-width: 1024px) {
+    form {
+        position: relative;
+        left: -470px;
+        top: -35px;
+        padding: 25px 25px;
+        backdrop-filter: blur(25px);
+    }
+    .form__image {
+        opacity: 0.6;
+    }
+}
+@media (max-width: 768px) {
+    form {
+        position: relative;
+        top: -45px;
+        padding-bottom: 35px;
+    }
+}
+
+@media (max-width: 425px) {
+    body {
+        overflow: scroll;
+    }
+    form {
+        padding-top: 45px;
+        width: 425px;
+        position: relative;
+        left: -500px;
+        top: -65px;
+    }
+    input {
+        width: 355px;
+    }
+    .already-have {
+        position: relative;
+        top: -30px;
+    }
+    .button {
+        padding: 25px;
+        width: 300px;
+        position: relative;
+        left: 40px;
+        text-align: center;
+    }
+}
