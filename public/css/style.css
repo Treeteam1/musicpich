@@ -229,6 +229,28 @@ input {
 input:focus {
   outline: none;
 }
+/* --- Тіп file --- */
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.input-hidden {
+  display: none;
+}
+.label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #fff;
+  background-color: #4CAF50;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.label:hover {
+  background-color: #45a049;
+}
+
 .input-flex-container {
   display: flex;
   gap: 8px;
