@@ -1,11 +1,17 @@
 <?php
-  session_start();
+session_start();
 
-  if(!empty($_SESSION['login'])) {
-    $columns = ["email = ?", "name = ?"];
-    $values = [$_SESSION['login'], $_SESSION['login']];
-    $userResult = \App\Database::selectDatabaseEx("users", $columns, $values, "OR");
+if (!empty($_SESSION['login'])) {
+  $columns = ["email = ?", "name = ?"];
+  $values = [$_SESSION['login'], $_SESSION['login']];
+  $userResult = \App\Database::selectDatabaseEx("users", $columns, $values, "OR");
+
+  if (isset($userResult['admin']) && $userResult['admin'] > 0) {
+    $isAdmin = true;
+  } else {
+    $isAdmin = false;
   }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,22 +52,23 @@
       </nav>
       <div class="popup-btn-container">
         <?php
-          if(!empty($_SESSION['login'])) {
+        if (!empty($_SESSION['login'])) {
+          ?>
+          <a href="/app/personal.php" class="button stroke-btn">
+            <?= $_SESSION['login'] ?>
+          </a>
+          <?php
+          if ($isAdmin) {
             ?>
-              <a href="/app/personal.php" class="button stroke-btn"><?= $_SESSION['login'] ?></a>
-            <?
-            if($userResult['admin'] > 0) {
-              ?>
-                <a href="/app/admin/load_music.php" class="button stroke-btn">Admin panel</a>
-              <?
-            }
+            <a href="/app/admin/load_music.php" class="button stroke-btn">Admin panel</a>
+            <?php
           }
-          else {
-            ?>
-              <a href="/app/authorization.php" class="button">Login</a>
-              <a href="/app/registration.php" class="button stroke-btn">Sign up</a>
-            <?
-          }
+        } else {
+          ?>
+          <a href="/app/authorization.php" class="button">Login</a>
+          <a href="/app/registration.php" class="button stroke-btn">Sign up</a>
+          <?php
+        }
         ?>
       </div>
     </div>
