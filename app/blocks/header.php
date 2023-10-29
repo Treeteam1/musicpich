@@ -30,7 +30,7 @@ if (!empty($_SESSION['login'])) {
     rel="stylesheet" />
   <link rel="stylesheet" href="../public/css/style.css" />
   <link rel="stylesheet" href="../public/css/adaptive.css" />
-  <link rel="icon" href="../public/images/logo.png" type="image/x-icon" />
+  <link rel="icon" href="../public/assets/images/logo.png" type="image/x-icon" />
 </head>
 
 <body>

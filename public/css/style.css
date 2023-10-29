@@ -223,33 +223,43 @@ input {
   background: transparent;
   border: none;
   border-bottom: 1px solid #595959;
-  padding: 5px 0 5px 12px;
+  padding: 5px 0 5px 0px;
   margin-top: 7px;
 }
 input:focus {
   outline: none;
 }
-/* --- Тіп file --- */
-.custom-file-input {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
+
+input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
-.input-hidden {
-  display: none;
+.inputfile-1 + label {
+  color: #f1e5e6;
+  background-color: var(--main-color);
 }
-.label {
-  font-size: 1.25em;
+.inputfile + label {
+  font-size: 1.25rem;
   font-weight: 700;
-  color: #fff;
-  background-color: #4CAF50;
-  padding: 10px 20px;
-  border-radius: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;
+  border-radius: 10px;
 }
-.label:hover {
-  background-color: #45a049;
-}
+.inputfile + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  margin-right: 0.25em;
 
 .input-flex-container {
   display: flex;
@@ -768,8 +778,12 @@ hr {
   background: #222a41;
   cursor: pointer;
 }
-.menu-button:active {background: var(--main-color);}
-.menu-button:active svg {fill: var(--main-color);}
+.menu-button:active {
+  background: var(--main-color);
+}
+.menu-button:active svg {
+  fill: var(--main-color);
+}
 .prem-button {
   padding: 138px 54px;
   display: flex;
@@ -790,7 +804,9 @@ hr {
   line-height: normal;
   cursor: pointer;
 }
-.acc__info {margin-top: 18px;}
+.acc__info {
+  margin-top: 18px;
+}
 .acc__info > .container {
   display: flex;
   align-items: center;
