@@ -1,16 +1,16 @@
-<?php
-require_once "../../vendor/autoload.php";
-session_start();
+<?php 
+  require_once "../../vendor/autoload.php";
+  session_start();
 
-if (!empty($_SESSION['login'])) {
-  $columns = ["email = ?", "name = ?"];
-  $values = [$_SESSION['login'], $_SESSION['login']];
-  $userResult = \App\Database::selectDatabaseEx("users", $columns, $values, "OR");
-}
-if (!$userResult['admin'] > 0) {
-  header("Location: /public/index.php");
-  exit();
-}
+  if(!empty($_SESSION['login'])) {
+    $columns = ["email = ?", "name = ?"];
+    $values = [$_SESSION['login'], $_SESSION['login']];
+    $userResult = \App\Database::selectDatabaseEx("users", $columns, $values, "OR");
+  }
+  if(!$userResult['admin'] > 0) {
+    header("Location: /public/index.php");
+    exit();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +50,18 @@ if (!$userResult['admin'] > 0) {
             <span>Choose a file</span>
           </label>
           <br />
+        </div>
+        <div class="form__item">
+          <label for="title">Title</label><br/>
+          <input type="text" name="title"/><br/>
+        </div>
+        <div class="form__item">
+          <label for="image">Link image</label><br/>
+          <input type="text" name="image"/><br/>
+        </div>
+        <div class="form__item">
+          <label for="author">Author</label><br/>
+          <input type="text" name="author"/><br/>
         </div>
         <input style="margin-top: 21px" class="button" type="submit" value="Load">
       </div>
