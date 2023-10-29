@@ -90,9 +90,22 @@ visibilityOnButtons.forEach((button, index) => {
 document.getElementById('filter-btn').addEventListener('click', function() {
     if (document.getElementsByClassName("accordion__button").style.display == 'block') {
         document.getElementsByClassName("accordion__button").style.display = 'none';
-        console.log('aaaaaaaa');
     } else {
         document.getElementsByClassName("accordion__button").style.display = 'block';
-        console.log('bbbbbbb');
+    }
+});
+
+
+/* аудіо */
+const playButton = document.getElementById('playButton');
+const audio = document.getElementById('audio');
+
+playButton.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        playButton.classList.add('paused');
+    } else {
+        audio.pause();
+        playButton.classList.remove('paused');
     }
 });

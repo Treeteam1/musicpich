@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 /* -------------- Reset style ----------------- */
 * {
   box-sizing: border-box;
 }
 body {
   background: #151a27;
-  font-family: "Poppins";
+  /* font-family: "Poppins"; */
+  font-family: 'Montserrat', sans-serif;
 }
 h1,
 h2,
@@ -90,7 +92,6 @@ img {
   background: var(--translucent-red-color);
   width: 100%;
   color: #fff;
-  font-family: Montserrat;
 }
 .stroke__red-btn:hover {
   background: var(--red-color);
@@ -131,7 +132,6 @@ img {
 }
 .nav-item-link {
   color: #fff;
-  font-family: Plus Jakarta Sans;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
@@ -204,7 +204,6 @@ label,
 input::placeholder,
 input {
   color: #fff;
-  font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -229,7 +228,7 @@ input {
 input:focus {
   outline: none;
 }
-
+/* ------ Input type file  ------ */
 input[type="file"] {
   width: 0.1px;
   height: 0.1px;
@@ -238,13 +237,12 @@ input[type="file"] {
   position: absolute;
   z-index: -1;
 }
-.inputfile-1 + label {
+/* .inputfile-1 + label {
   color: #f1e5e6;
   background-color: var(--main-color);
-}
-.inputfile + label {
-  font-size: 1.25rem;
-  font-weight: 700;
+} */
+.form__item-file + label {
+  font-size: 1rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
@@ -252,15 +250,18 @@ input[type="file"] {
   overflow: hidden;
   padding: 0.625rem 1.25rem;
   border-radius: 10px;
+  color: #f1e5e6;
+  background-color: var(--main-color);
 }
-.inputfile + label svg {
+.form__item-file + label svg {
   width: 1em;
   height: 1em;
   vertical-align: middle;
   fill: currentColor;
   margin-top: -0.25em;
-  margin-right: 0.25em;
-
+  margin-right: 2.25em;
+}
+/* ----------------------------- */
 .input-flex-container {
   display: flex;
   gap: 8px;
@@ -315,7 +316,6 @@ input[type="file"] {
 .form__bottom-description {
   margin-top: 12px;
   color: #f0f0f0;
-  font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -519,7 +519,7 @@ input[type="file"] {
   color: #a7aab5;
   background-color: transparent;
   cursor: pointer;
-  padding: 2px 17px;
+  padding: 5px 17px;
   width: 100%;
   text-align: left;
   border: none;
@@ -714,7 +714,6 @@ hr {
 .personal__information-title,
 .personal__information-text,
 .personal__information-text span {
-  font-family: Montserrat;
   font-size: 26px;
   font-style: normal;
   font-weight: 700;
@@ -766,7 +765,6 @@ hr {
   gap: 13px;
   color: #fff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Montserrat;
   font-size: 17px;
   letter-spacing: 1.445px;
   background: transparent;
@@ -797,7 +795,6 @@ hr {
   border-radius: 10px;
   color: #fff;
   text-align: center;
-  font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -823,7 +820,6 @@ hr {
 }
 .acc__nickname {
   color: #fff;
-  font-family: Montserrat;
   font-size: 28px;
   font-weight: 500;
   text-align: center;
@@ -846,9 +842,80 @@ hr {
 .premium-status > p {
   margin-right: 25px;
   color: #fff;
-  font-family: Montserrat;
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+/* ~~~~~~~~~~ Скорлл бар ~~~~~~~~~~ */
+/* Webkit (Safari/Chrome) */
+::-webkit-scrollbar {
+  width: 5px;
+  background: #222a41;
+}
+::-webkit-scrollbar-thumb {
+  background: #37c25e; /* Колір самого скроллбару */
+  border-radius: 5px;
+  transition: 0.2s;
+}
+/* Firefox */
+::-moz-scrollbar {
+  width: 5px;
+  background: #222a41;
+}
+::-moz-scrollbar-thumb {
+  background: #37c25e; /* Колір самого скроллбару */
+  border-radius: 5px;
+}
+/* Internet Explorer/Edge */
+body {
+  scrollbar-width: thin; /* 'thin', 'auto', або 'none' */
+  scrollbar-color: #37c25e; /* Колір самого скроллбару */
+}
+
+/* Webkit (Safari/Chrome) */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #53e97d; /* Колір фону скроллбару при наведенні */
+}
+/* Firefox */
+::-moz-scrollbar-thumb:hover {
+  background-color: #53e97d; /* Колір фону скроллбару при наведенні */
+}
+/* Internet Explorer/Edge */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #53e97d; /* Колір фону скроллбару при наведенні */
+}
+/* аудіо */
+/* .audio-player {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+.play-button {
+  width: 31px;
+  height: 31px;
+  border: 2px solid #37c25e;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+
+.play-button:before {
+  content: url("/public/assets/images/play.svg"); /* Unicode character for play icon */
+  font-size: 21px;
+  line-height: 1px;
+  text-align: center;
+  border: solid 2px #37c25e;
+  border-radius: 51px;
+  padding: 8px 4px 0px;
+  margin-left: -16px;
+}
+
+.play-button.paused:before {
+  content: url("/public/assets/images/pause.svg");
 }
