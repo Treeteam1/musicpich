@@ -36,7 +36,6 @@
             } else {
                 $stmt = $this->db->conn->prepare("DELETE FROM musics WHERE id = ?");
                 $stmt->execute([$id]);
-                exit;
             }
         }
     }

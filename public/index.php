@@ -238,13 +238,13 @@
               if(count($results) > 0) {
                 foreach($results as $result) {
                   ?>
-                    <li class="musics-ul-item">
-                      <img class="track-cover-img" width="280px" src="<?= $result['image']; ?>" alt="" />
-                      <div class="music-info">
-                        <p class="name-of-music"><?= $result['title']; ?></p>
-                        <p class="name-of-author"><?= $result['author']; ?></p>
+                    <li class="musics__item">
+                      <img class="musics__item-image" width="280px" src="<?= $result['image']; ?>" alt="" />
+                      <div class="musics__item-info">
+                        <p class="musics__item-title"><?= $result['title']; ?></p>
+                        <p class="musics__item-author"><?= $result['author']; ?></p>
                         <hr />
-                        <div class="music-info-flex">
+                        <div class="musics__item-info-flex">
                           <ul class="interactive-music-ul">
                             <li class="interactive-music-item save">
                               <a href="..<?= $result['dir']; ?>">
