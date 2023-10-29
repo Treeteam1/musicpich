@@ -68,5 +68,25 @@
             session_unset();
             return 1;
         }
+        //Отримання данних про користувача
+        public static function getUserData() {
+            if(!empty($_SESSION['login'])) {
+                $columns = ["email = ?", "name = ?"];
+                $values = [$_SESSION['login'], $_SESSION['login']];
+                $userResult = \App\Database::selectDatabaseEx("users", $columns, $values, "OR");
+                return $userResult;
+            } else {
+                return null; // Повертаємо null, якщо користувач не залогінений
+            }
+        }        
+        //Отримання данних чи користувач адмін
+        public static function getUserAdmin($level, $location = "/public/index.php"): bool {
+            $userData = User::getUserData();
+            if(!$userData > $level) {
+                header("Location: {$location}");
+                return 0;
+            }
+            else {return 1;}
+        }
     }
 ?>

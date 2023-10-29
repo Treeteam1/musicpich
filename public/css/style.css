@@ -545,6 +545,7 @@ input[type="file"] {
   padding: 0 18px;
   display: none;
   overflow: hidden;
+  width: 100%;
 }
 .accordion__panel-list {
   list-style: none;
@@ -560,16 +561,17 @@ input[type="file"] {
   gap: 16px;
   row-gap: 16px;
 }
-.musics-ul-item {
+.musics__item {
   width: 280px;
   border: none;
   border-radius: 12px;
   background: #1d212e;
 }
-.track-cover-img {
+.musics__itemmusics__item-images {
   border-radius: 12px 12px 0 0;
+  overflow: hidden;
 }
-.music-info {
+.musics__item-info {
   border-radius: 0px 0px 12px 12px;
   background: radial-gradient(
     242.23% 241.86% at 53.72% -58.25%,
@@ -579,15 +581,15 @@ input[type="file"] {
   backdrop-filter: blur(34px);
   padding: 12px;
 }
-.name-of-music,
-.name-of-author {
+.musics__item-title,
+.musics__item-author {
   color: #fff;
   font-feature-settings: "liga" off;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
 }
-.name-of-author {
+.musics__item-author {
   color: #a7aab5;
   font-weight: 400;
 }
@@ -596,7 +598,7 @@ hr {
   stroke: #a7aab5;
   opacity: 0.2;
 }
-.music-info-flex {
+.musics__item-info-flex {
   display: flex;
   justify-content: space-between;
 }
@@ -605,7 +607,7 @@ hr {
   align-items: center;
   gap: 16px;
 }
-.interactive-music-item {
+.interactive-music-ul li {
   cursor: pointer;
 }
 .save {
@@ -904,7 +906,6 @@ body::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
   outline: none;
 }
-
 .play-button:before {
   content: url("/public/assets/images/play.svg"); /* Unicode character for play icon */
   font-size: 21px;
@@ -915,7 +916,6 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 8px 4px 0px;
   margin-left: -16px;
 }
-
 .play-button.paused:before {
   content: url("/public/assets/images/pause.svg");
 }

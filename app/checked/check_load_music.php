@@ -1,7 +1,17 @@
 <?php
     require_once "../../vendor/autoload.php";
-    $music = new App\Music();
+    session_start();
+    
+    $user = new App\User();
+    $userData = $user->getUserData();
 
+    // Перевіряємо, чи користувач має адміністративні права
+    if (!$user->getUserAdmin(0)) {
+        echo "Доступ заборонено. У вас недостатньо прав для виконання цієї операції.";
+        exit;
+    }
+    
+    $music = new App\Music();
     $data = [
         "title" => htmlspecialchars(trim($_POST['title'])),
         "author" => htmlspecialchars(trim($_POST['author'])),

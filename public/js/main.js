@@ -1,3 +1,4 @@
+console.log("qq");
 // Dropdown menu
 document.addEventListener('DOMContentLoaded', function() {
     const dropdownMenus = document.querySelectorAll('.dropdown-menu');
@@ -96,16 +97,111 @@ document.getElementById('filter-btn').addEventListener('click', function() {
 });
 
 
-/* аудіо */
-const playButton = document.getElementById('playButton');
-const audio = document.getElementById('audio');
 
-playButton.addEventListener('click', () => {
-    if (audio.paused) {
-        audio.play();
-        playButton.classList.add('paused');
-    } else {
-        audio.pause();
-        playButton.classList.remove('paused');
+/* аудіо */
+let currentAudio = null;
+
+document.body.addEventListener('click', function(event) {
+    // Перевірити, чи було натискання на кнопку з класом .play-button
+    if (event.target.classList.contains('play-button')) {
+        // Отримати батьківський .audio-player елемент для конкретної кнопки
+        const audioPlayer = event.target.closest('.audio-player');
+        // Отримати аудіо елемент і його стан відтворення
+        const audio = audioPlayer.querySelector('audio');
+
+        // Перевірити, чи є попередня аудіо-доріжка і чи вона не є тепершньою
+        if (currentAudio && currentAudio !== audio) {
+            // Призупинити попередню аудіо-доріжку і змінити її значок на паузу
+            currentAudio.pause();
+            const previousPlayButton = currentAudio.parentElement.querySelector('.play-button');
+            if (previousPlayButton) {
+                previousPlayButton.classList.remove('paused');
+            }
+        }
+
+        // Перевірити, чи це не та ж сама аудіо-доріжка, яка вже відтворюється
+        if (audio !== currentAudio) {
+            // Перевірити, чи поточна аудіо-доріжка існує і вимкнути її
+            if (currentAudio) {
+                currentAudio.pause();
+            }
+
+            // Встановити нову аудіо-доріжку як поточну і відтворити її
+            currentAudio = audio;
+            audio.play();
+            event.target.classList.add('paused');
+        } else {
+            // Поточна аудіо-доріжка натискана знову, тому вимкнути її
+            audio.pause();
+            event.target.classList.remove('paused');
+            currentAudio = null;
+        }
     }
 });
+
+
+
+/* Програвання другого аудіо одразу після першгого */
+const audioPlayers = document.querySelectorAll('.audio-player');
+let currentAudioIndex = 0;
+
+function playNextAudio() {
+    // Перевірити, чи є наступна аудіо-доріжка
+    if (currentAudioIndex < audioPlayers.length - 1) {
+        // Призупинити поточну аудіо-доріжку
+        if (audioPlayers[currentAudioIndex].querySelector('audio')) {
+            audioPlayers[currentAudioIndex].querySelector('audio').pause();
+        }
+
+        // Збільшити індекс, щоб відтворити наступну аудіо-доріжку
+        currentAudioIndex++;
+
+        // Відтворити наступну аудіо-доріжку
+        if (audioPlayers[currentAudioIndex].querySelector('audio')) {
+            audioPlayers[currentAudioIndex].querySelector('audio').play();
+        }
+    }
+}
+
+// Додати обробник події 'ended' для кожного аудіо-елемента
+audioPlayers.forEach((audioPlayer, index) => {
+    const audio = audioPlayer.querySelector('audio');
+    audio.addEventListener('ended', () => {
+        // Якщо поточний індекс відповідає цьому аудіо-елементу, відтворити наступний
+        if (index === currentAudioIndex) {
+            playNextAudio();
+        }
+    });
+});
+
+
+
+
+/* Інпут типу file */
+(function (document, window, index) {
+  const inputs = document.querySelectorAll(".form__item-file");
+
+  inputs.forEach((input) => {
+    const label = input.nextElementSibling;
+    const labelOriginalText = label.innerHTML;
+
+    input.addEventListener("change", (e) => {
+      const files = e.target.files;
+
+      if (files.length === 0) {
+        label.innerHTML = labelOriginalText;
+      } else {
+        const fileName = files[0].name;
+        label.querySelector("span").innerHTML = fileName;
+      }
+    });
+
+    // Firefox bug fix
+    input.addEventListener("focus", () => {
+      input.classList.add("has-focus");
+    });
+    input.addEventListener("blur", () => {
+      input.classList.remove("has-focus");
+    });
+  });
+})(document, window, 0);
