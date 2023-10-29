@@ -38,8 +38,20 @@
       <h2 class="title">Load music</h2>
       <div class="form__items">
         <div class="form__item">
-          <label for="email">Load music</label><br/>
+          <label for="file">Load music file</label><br/>
           <input type="file" name="file"/><br/>
+        </div>
+        <div class="form__item">
+          <label for="title">Title</label><br/>
+          <input type="text" name="title"/><br/>
+        </div>
+        <div class="form__item">
+          <label for="image">Link image</label><br/>
+          <input type="text" name="image"/><br/>
+        </div>
+        <div class="form__item">
+          <label for="author">Author</label><br/>
+          <input type="text" name="author"/><br/>
         </div>
         <input style="margin-top: 21px" class="button" type="submit" value="Load">
       </div>
