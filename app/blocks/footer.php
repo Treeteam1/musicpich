@@ -108,5 +108,4 @@
   </footer>
 </body>
 <script src="/public/js/main.js"></script>
-<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </html>

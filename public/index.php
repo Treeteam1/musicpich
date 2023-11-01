@@ -197,17 +197,20 @@
         </div>
         <!-- Списки з треками -->
         <div class="musics">
-          <ul class="musics-ul list">
+          <ul id="musicList" class="musics-ul list">
             <?php
               $db = new App\Database();
               $stmt = $db->conn->prepare("SELECT * FROM `musics`");
               $stmt->execute();
               $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+              $item = 0;
 
               if(count($results) > 0) {
                 foreach($results as $result) {
+                  $item++;
+                  if($item > 10) {break;}
                   ?>
-                    <li class="musics__item">
+                    <li class="musics__item" data-id="<?= $result['id']; ?>">
                       <img class="musics__item-image" width="280px" src="<?= $result['image']; ?>" alt=""/>
                       <div class="musics__item-info">
                         <p class="musics__item-title"><?= $result['title']; ?></p>
@@ -248,10 +251,10 @@
             ?>
           </ul>
           <?php
-            if(count($results) > 15) {
+            if(count($results) > 10) {
               ?>
                 <div class="center_container">
-                  <button style="margin-top: 24px;" class="button stroke-btn" type="button">View More</button>
+                  <button id="loadMore" style="margin-top: 24px;" class="button stroke-btn" type="button">Показать больше</button>
                 </div>
               <?
             }
@@ -260,4 +263,23 @@
       </div>
     </div>
   </section>
+  <script>
+    document.getElementById("loadMore").addEventListener("click", function() {
+        var lastId = 0;
+        var loadedItems = document.querySelectorAll(".musics__item");
+        if (loadedItems.length > 0) {
+            lastId = loadedItems[loadedItems.length - 1].dataset.id;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "../app/load_more_data.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onload = function() {
+            // Добавляем полученные данные на страницу
+            var contentDiv = document.getElementById("musicList"); // Змінено з "content" на "musicList"
+            contentDiv.innerHTML += xhr.responseText;
+        };
+        xhr.send("page=" + page + "&lastId=" + lastId);
+    });
+  </script>
 <?php require_once "../app/blocks/footer.php"; ?>
