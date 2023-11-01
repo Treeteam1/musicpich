@@ -656,7 +656,7 @@ hr {
 }
 .footer-ul-item-title,
 .product-link,
-.support-link,
+.footer__list-column,
 .our-social-signature {
   color: #5b5c61;
   font-feature-settings: "liga" off;
@@ -664,28 +664,29 @@ hr {
   font-weight: 500;
   line-height: 1.5;
 }
-.product-ul,
+.footer__list-column,
 .support-ul {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+.footer__list-column-row {display: flex;}
 .product-link,
-.support-link,
+.footer__list-column,
 .our-social-signature {
   color: #a7aab5;
   font-weight: 500;
 }
-.social-ul {
+.footer__list-column {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-.social-link > svg {
+.footer__list-column-item_row > svg {
   fill: #a7aab5;
   transition: 0.3s;
 }
-.social-link > svg:hover {
+.footer__list-column-item_row > svg:hover {
   fill: #fff;
 }
 .copyright {

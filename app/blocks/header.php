@@ -40,11 +40,9 @@ if (!empty($_SESSION['login'])) {
       </div>
       <nav class="navigate">
         <ul class="list nav-ul">
-          <li class="nav-ul-item"><a class="link nav-item-link" href="#">Home</a></li>
-          <li class="nav-ul-item"><a class="link nav-item-link" href="#">Category</a></li>
-          <li class="nav-ul-item"><a class="link nav-item-link" href="#">Pricing</a></li>
+          <li class="nav-ul-item"><a class="link nav-item-link" href="#">Главная</a></li>
           <li class="nav-ul-item"><a class="link nav-item-link" href="#">FAQ</a></li>
-          <li class="nav-ul-item"><a class="link nav-item-link" href="#">Contact Us</a></li>
+          <li class="nav-ul-item"><a class="link nav-item-link" href="#">Связь с нами</a></li>
         </ul>
       </nav>
       <div class="popup-btn-container">
@@ -57,13 +55,13 @@ if (!empty($_SESSION['login'])) {
           <?php
           if ($isAdmin) {
             ?>
-            <a href="/app/admin/load_music.php" class="button stroke-btn">Admin panel</a>
+            <a href="/app/admin/load_music.php" class="button stroke-btn">Админ панель</a>
             <?php
           }
         } else {
           ?>
-          <a href="/app/authorization.php" class="button">Login</a>
-          <a href="/app/registration.php" class="button stroke-btn">Sign up</a>
+          <a href="/app/authorization.php" class="button">Войти</a>
+          <a href="/app/registration.php" class="button stroke-btn">Зарегистрироваться</a>
           <?php
         }
         ?>
