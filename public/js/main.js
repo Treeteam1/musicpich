@@ -176,7 +176,6 @@ audioPlayers.forEach((audioPlayer, index) => {
 
 
 
-
 /* Інпут типу file */
 (function (document, window, index) {
   const inputs = document.querySelectorAll(".form__item-file");
@@ -205,3 +204,50 @@ audioPlayers.forEach((audioPlayer, index) => {
     });
   });
 })(document, window, 0);
+
+
+
+/* Функціонал кнопки "Показати більше" */
+var xhr = new XMLHttpRequest();
+xhr.open('POST', '../app/load_more.php', true);
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+var loadMoreButton = document.getElementById('loadMore');
+
+loadMoreButton.addEventListener('click', function() {
+    var lastId = loadMoreButton.dataset.lastid; // Отримання значення lastId всередині обробника подій
+    var data = {
+        lastId: lastId
+    };
+
+    var jsonData = JSON.stringify(data);
+
+    xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            console.log(xhr.responseText);
+
+            try {
+                var response = JSON.parse(xhr.responseText); // Парсимо JSON в масив об'єктів
+
+                response.forEach(function(result) {
+                    var listItem = document.createElement('li');
+                    var musicList = document.getElementById('musicList');
+
+                    // Ваш код для створення DOM-елементів та їх заповнення даними з result тут
+
+                    musicList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Помилка парсингу JSON: ', error);
+            }
+        } else {
+            console.error('Помилка запиту: ' + xhr.status);
+        }
+    };
+
+    xhr.onerror = function() {
+        console.error('Помилка запиту');
+    };
+
+    xhr.send(jsonData);
+});

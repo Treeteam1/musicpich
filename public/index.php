@@ -210,7 +210,7 @@
                   $item++;
                   if($item > 10) {break;}
                   ?>
-                    <li class="musics__item" data-id="<?= $result['id']; ?>">
+                    <li class="musics__item">
                       <img class="musics__item-image" width="280px" src="<?= $result['image']; ?>" alt=""/>
                       <div class="musics__item-info">
                         <p class="musics__item-title"><?= $result['title']; ?></p>
@@ -254,7 +254,7 @@
             if(count($results) > 10) {
               ?>
                 <div class="center_container">
-                  <button id="loadMore" style="margin-top: 24px;" class="button stroke-btn" type="button">Показать больше</button>
+                  <button id="loadMore" data-lastid="<?= $result['id']; ?>" style="margin-top: 24px;" class="button stroke-btn" type="button">Показать больше</button>
                 </div>
               <?
             }
@@ -263,23 +263,4 @@
       </div>
     </div>
   </section>
-  <script>
-    document.getElementById("loadMore").addEventListener("click", function() {
-        var lastId = 0;
-        var loadedItems = document.querySelectorAll(".musics__item");
-        if (loadedItems.length > 0) {
-            lastId = loadedItems[loadedItems.length - 1].dataset.id;
-        }
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "../app/load_more_data.php", true);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.onload = function() {
-            // Добавляем полученные данные на страницу
-            var contentDiv = document.getElementById("musicList"); // Змінено з "content" на "musicList"
-            contentDiv.innerHTML += xhr.responseText;
-        };
-        xhr.send("page=" + page + "&lastId=" + lastId);
-    });
-  </script>
 <?php require_once "../app/blocks/footer.php"; ?>

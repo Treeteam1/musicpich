@@ -28,7 +28,21 @@ if (!empty($_SESSION['login'])) {
   <link rel="stylesheet" href="../public/css/style.css"/>
   <link rel="stylesheet" href="../public/css/adaptive.css"/>
   <link rel="icon" href="../public/assets/images/logo.png" type="image/x-icon"/>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      var loadedItems = 34;
+
+      function loadMoreItems() {
+          $.ajax({
+              url: '../app/load_more.php',
+              type: 'POST',
+              data: { loadedItems: loadedItems },
+              success: function(response) {
+                  $('#items-container').append(response);
+                  loadedItems += 5; // Assuming 5 items loaded at a time
+              }
+          });
+      }
+  </script>
 </head>
 
 <body>
