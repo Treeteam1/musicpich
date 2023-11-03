@@ -1,46 +1,50 @@
-@media (max-width: 1024px) {
-    form {
-        position: relative;
-        left: -470px;
-        top: -35px;
-        padding: 25px 25px;
-        backdrop-filter: blur(25px);
-    }
-    .form__image {
-        opacity: 0.6;
-    }
+@media (max-width: 1280px) {
+    .title {font-size: 31px;}
+    .subtitle {font-size: 18px;}
+
+    .music-variants-ul {gap: 53px;}
+    .music-variants-ul-item {font-size: 14px;}
+    .music-variants-ul-item svg {width: 24px;}
+
+    .footer__list-column {align-items: start;}
+    .footer__info-project {width: calc(100% / 1.3);}
 }
-@media (max-width: 768px) {
-    form {
-        position: relative;
-        top: -45px;
-        padding-bottom: 35px;
+@media (max-width: 1024px) {
+    .form__image {display: none;}
+    .button {
+        padding: 14px 34px;
+        font-size: 15px;
     }
+
+    .music-variants-ul {gap: 35px;}
+    .music-variants-ul-item > p {font-size: 18px;}
+
+    .dropdown-btn {margin-left: 19px;}
+    .dropdown-toggle {font-size: 14px;}
+
+    .filters {margin-right: 0px;}
+
+    .accordion__button {font-size: 19px;}
 }
 
-@media (max-width: 425px) {
-    body {
-        overflow: scroll;
-    }
-    form {
-        padding-top: 45px;
-        width: 425px;
-        position: relative;
-        left: -500px;
-        top: -65px;
-    }
-    input {
-        width: 355px;
-    }
-    .already-have {
-        position: relative;
-        top: -30px;
-    }
+@media (max-width: 768px) {
+    /* Бургер меню */
+    .header__burger {display: block;}
+
+    .title {font-size: 27px;}
+    .subtitle {font-size: 16.5px;}
+    label {font-size: 12.5px;}
+}
+
+@media (max-width: 480px) {
     .button {
-        padding: 25px;
-        width: 300px;
-        position: relative;
-        left: 40px;
-        text-align: center;
+        padding: 14px 34px;
+        font-size: 14px;
     }
+
+    .title {font-size: 24px;}
+    .subtitle {font-size: 14.5px;}
+    label {font-size: 12px;}
+    
+    .form__bottom-description {font-size: 14px;}
 }

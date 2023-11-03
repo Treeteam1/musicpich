@@ -27,23 +27,23 @@
       </p>
       <ul class="list music-variants-ul">
         <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <p>Youtube</p>
         </li>
         <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <p>Instagram</p>
         </li>
         <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <p>TikTok</p>
         </li>
         <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <p>Games</p>
         </li>
         <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 33 32" fill="none"><path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <p>Commercials</p>
         </li>
       </ul>
@@ -81,16 +81,6 @@
               <li><a id="dropdown-medium" class="dropdown-item link">Medium</a></li>
               <li><a id="dropdown-long" class="dropdown-item link">Long</a></li>
               <li><a id="dropdown-very-long" class="dropdown-item link">Very long</a></li>
-            </ul>
-          </li>
-          <!-- Випадаючий список "Vocal & Instrument" -->
-          <li class="nav-item dropdown">
-            <button id="dropdown-btn-vi" class="dropdown-toggle vocal" data-target="dropdown-menu3" type="button">Vocal & Instrument<span style="position: relative; top: -3px" class="dropdown-btn"></span></button>
-            <ul id="dropdown-menu3" style="width: 260px" class="dropdown-menu list hide">
-              <li><a id="dropdown-vocal" class="dropdown-item link">Vocal</a></li>
-              <li><a id="dropdown-instrument" class="dropdown-item link">Instrument</a></li>
-              <li><a id="dropdown-vi" style="width: 260px" class="dropdown-item link">Vocal & Instrument</a></li>
-              <li><a id="dropdown-nonee" class="dropdown-item link">None</a></li>
             </ul>
           </li>
         </ul>

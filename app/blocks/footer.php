@@ -1,12 +1,12 @@
   <!-- Футер -->
-  <footer class="main-footer">
+  <footer class="footer__main">
     <div class="container">
-      <div class="descr">
+      <div class="footer__info-project">
         <div class="logo-container">
           <img src="./assets/images/logo.png" alt="Website Logo" class="logo" />
           <a href="index.html" class="websites-name link">Musicpich</a>
         </div>
-        <p class="descr">
+        <p>
           Musicpich — это источник музыки, не требующей лицензионных отчислений.<br>
           Улучшите свои проекты с помощью нашей разнообразной коллекции.<br>
           Упростите процесс лицензирования и раскройте свои<br>

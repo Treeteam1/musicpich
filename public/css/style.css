@@ -2,6 +2,7 @@
 /* -------------- Reset style ----------------- */
 * {
   box-sizing: border-box;
+  /* border: solid 2px #bd4040; */
 }
 body {
   background: #151a27;
@@ -112,6 +113,7 @@ img {
 .header {
   background-image: url("../assets/images/main-block-background.png");
   background-size: cover;
+  width: 100%;
 }
 .logo-container {
   display: flex;
@@ -136,9 +138,46 @@ img {
   font-weight: 600;
   line-height: 1.5;
 }
+
+/* Бургер меню */
+.header__burger-nav {
+  display: flex;
+  justify-content: center;
+  column-gap: 35px;
+}
+
+.header__burger {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+}
+.header__burger span:nth-child(1),
+.header__burger span:nth-child(2),
+.header__burger span:nth-child(3) {
+  background-color: #37c25e;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+}
+.header__burger span:nth-child(2) {top: 9px;}
+.header__burger span:nth-child(3) {bottom: 0;}
+
+.header__burger-menu {margin-top: -95px;transition: 0.3s;}
+.header__burger.active span:nth-child(2) {display: none;}
+.header__burger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 18px;
+}
+.header__burger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.header__burger-menu.active {margin-top: 95px;}
 /* ~~~~~~~~~~~~~~~~ Форма ~~~~~~~~~~~~~~~ */
 form {
-  margin: 12% auto;
+  margin: auto auto;
 }
 .form {
   display: flex;
@@ -222,7 +261,7 @@ input {
   background: transparent;
   border: none;
   border-bottom: 1px solid #595959;
-  padding: 5px 0 5px 0px;
+  padding: 5px 0 5px 5px;
   margin-top: 7px;
 }
 input:focus {
@@ -421,12 +460,12 @@ input[type="file"] {
   justify-content: space-between;
   align-items: center;
 }
-.found-flex-container {
+/* .found-flex-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 21px;
-}
+} */
 
 /* выпадающие меню для фильтров */
 .dropdowns-ul {
@@ -557,6 +596,7 @@ input[type="file"] {
 /* список песен */
 .musics-ul {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
   row-gap: 16px;
@@ -627,17 +667,18 @@ hr {
   justify-content: center;
 }
 /* Footer */
-.main-footer > .container {
+.footer__main > .container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: calc(100% / 9);
 }
-.main-footer {
+.footer__main {
   padding-top: 44px;
   padding-bottom: 56px;
   background: #1d212e;
   margin-top: 80px;
 }
-.descr {
+.footer__info-project {
   color: #a7aab5;
   font-feature-settings: "liga" off;
   font-size: 16px;

@@ -251,3 +251,13 @@ loadMoreButton.addEventListener('click', function() {
 
     xhr.send(jsonData);
 });
+
+
+
+/* Бургер меню */
+let headerMenuButton = document.querySelector('.header__burger');
+let headerMenu = document.querySelector('.header__burger-menu');
+headerMenuButton.addEventListener('click', function(){
+	headerMenu.classList.toggle('active');
+    headerMenuButton.classList.toggle('active');
+})

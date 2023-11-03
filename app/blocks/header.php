@@ -48,6 +48,24 @@ if (!empty($_SESSION['login'])) {
 <body>
   <!-- Навигация -->
   <header class="header">
+    <!-- Бургер меню -->
+    <div class="header__burger-nav">
+      <div class="header__burger-container">
+        <div class="header__burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="header__burger-menu">
+          <ul>
+            <li class="nav-ul-item"><a class="link nav-item-link" href="#">Главная</a></li>
+            <li class="nav-ul-item"><a class="link nav-item-link" href="#">FAQ</a></li>
+            <li class="nav-ul-item"><a class="link nav-item-link" href="#">Связь с нами</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ПК меню -->
     <div class="container">
       <div class="logo-container">
         <img src="../public/assets/images/logo.png" alt="Website Logo" class="logo"/>
