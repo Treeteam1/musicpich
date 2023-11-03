@@ -1,256 +1,269 @@
-<?php 
-  session_start();
-  require_once "../vendor/autoload.php";
-  require_once "../app/blocks/header.php"; 
+<?php
+session_start();
+require_once "../vendor/autoload.php";
+require_once "../app/blocks/header.php";
 ?>
 <link rel="icon" href="./assets/images/logo.png" type="image/x-icon" />
-    <!-- Основний блок -->
-    <section class="hero-section">
-      <!-- <div class="background-overlay"></div> -->
-      <div class="container">
-        <h1 class="hero-title">Epic music<br />experience</h1>
-        <p class="hero-subtitle">
-          We have the perfect music with free licensing for your <br />
-          creativity. Discover the possibilities now!
-        </p>
-        <button style="margin-top: 21px" class="button" type="button">Start Free Now</button>
+<!-- Основний блок -->
+<section class="hero-section">
+  <!-- <div class="background-overlay"></div> -->
+  <div class="container">
+    <h1 class="hero-title">Epic music<br />experience</h1>
+    <p class="hero-subtitle">
+      We have the perfect music with free licensing for your <br />
+      creativity. Discover the possibilities now!
+    </p>
+    <button style="margin-top: 21px" class="button" type="button">Start Free Now</button>
+  </div>
+</section>
+</header>
+<!-- Наші соц. мережі -->
+<section class="downloads-music">
+  <div class="container">
+    <h2 class="title">Music Downloads for All Your Creative Ventures</h2>
+    <p class="subtitle">
+      Unleash your creativity with our versatile music downloads, perfect
+      for any project you have in mind.
+    </p>
+    <ul class="list music-variants-ul">
+      <li class="music-variants-ul-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+          <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <p>Youtube</p>
+      </li>
+      <li class="music-variants-ul-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+          <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <p>Instagram</p>
+      </li>
+      <li class="music-variants-ul-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+          <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <p>TikTok</p>
+      </li>
+      <li class="music-variants-ul-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+          <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <p>Games</p>
+      </li>
+      <li class="music-variants-ul-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+          <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <p>Commercials</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- Філтрація музики -->
+<section class="filter-and-music">
+  <div class="container">
+    <!-- Верхнє меню для фільтрації -->
+    <div class="found-header">
+      <!-- Поле для пошуку по назві треку -->
+      <div class="found-flex-container">
+        <div class="input-flex-container">
+          <input class="search-input" type="text" name="search" id="search" placeholder="Search Music or Backsound" />
+          <svg class="search-image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none">
+            <path
+              d="M11.7669 20.7554C16.7311 20.7554 20.7554 16.7311 20.7554 11.7669C20.7554 6.80263 16.7311 2.77832 11.7669 2.77832C6.80263 2.77832 2.77832 6.80263 2.77832 11.7669C2.77832 16.7311 6.80263 20.7554 11.7669 20.7554Z"
+              stroke="#A7AAB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M18.0186 18.4854L21.5426 22.0002" stroke="#A7AAB5" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
       </div>
-    </section>
-  </header>
-  <!-- Наші соц. мережі -->
-  <section class="downloads-music">
-    <div class="container">
-      <h2 class="title">Music Downloads for All Your Creative Ventures</h2>
-      <p class="subtitle">
-        Unleash your creativity with our versatile music downloads, perfect
-        for any project you have in mind.
-      </p>
-      <ul class="list music-variants-ul">
-        <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
-            <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          <p>Youtube</p>
+      <!-- Випадаючі списки для філтрації -->
+      <ul class="dropdowns-ul list">
+        <li class="nav-item dropdown">
+          <button id="dropdown-btn-popular" class="dropdown-toggle" data-target="dropdown-menu1" type="button">
+            Popular
+            <div class="dropdown-btn"></div>
+          </button>
+          <ul id="dropdown-menu1" class="dropdown-menu list hide">
+            <li><a id="dropdown-popular" class="dropdown-item link">Popular</a></li>
+            <li><a id="dropdown-newest" class="dropdown-item link">Newest</a></li>
+            <li><a id="dropdown-relevant" class="dropdown-item link">Relevant</a></li>
+            <li><a id="dropdown-none" class="dropdown-item link">None</a></li>
+          </ul>
         </li>
-        <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
-            <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          <p>Instagram</p>
+        <li class="nav-item dropdown">
+          <button id="dropdown-btn-duration" class="dropdown-toggle" data-target="dropdown-menu2" type="button">
+            Duration
+            <div class="dropdown-btn"></div>
+          </button>
+          <ul id="dropdown-menu2" class="dropdown-menu list hide">
+            <li><a id="dropdown-short" class="dropdown-item link">Short</a></li>
+            <li><a id="dropdown-medium" class="dropdown-item link">Medium</a></li>
+            <li><a id="dropdown-long" class="dropdown-item link">Long</a></li>
+            <li><a id="dropdown-very-long" class="dropdown-item link">Very long</a></li>
+          </ul>
         </li>
-        <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
-            <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          <p>TikTok</p>
-        </li>
-        <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
-            <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          <p>Games</p>
-        </li>
-        <li class="music-variants-ul-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
-            <path d="M27.1673 8L12.5007 22.6667L5.83398 16" stroke="#37C25E" stroke-width="4" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          <p>Commercials</p>
+        <li class="nav-item dropdown">
+          <button id="dropdown-btn-vi" class="dropdown-toggle vocal" data-target="dropdown-menu3" type="button">
+            Vocal & Instrument
+            <div style="position: relative; top: -3px" class="dropdown-btn"></div>
+          </button>
+          <ul id="dropdown-menu3" style="width: 260px" class="dropdown-menu list hide">
+            <li><a id="dropdown-vocal" class="dropdown-item link">Vocal</a></li>
+            <li><a id="dropdown-instrument" class="dropdown-item link">Instrument</a></li>
+            <li><a id="dropdown-vi" style="width: 260px" class="dropdown-item link">Vocal & Instrument</a></li>
+            <li><a id="dropdown-nonee" class="dropdown-item link">None</a></li>
+          </ul>
         </li>
       </ul>
     </div>
-  </section>
-  <!-- Філтрація музики -->
-  <section class="filter-and-music">
-    <div class="container">
-      <!-- Верхнє меню для фільтрації -->
-      <div class="found-header">
-        <!-- Поле для пошуку по назві треку -->
-        <div class="found-flex-container">
-          <div class="input-flex-container">
-            <input class="search-input" type="text" name="search" id="search" placeholder="Search Music or Backsound" />
-            <svg class="search-image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none">
-              <path
-                d="M11.7669 20.7554C16.7311 20.7554 20.7554 16.7311 20.7554 11.7669C20.7554 6.80263 16.7311 2.77832 11.7669 2.77832C6.80263 2.77832 2.77832 6.80263 2.77832 11.7669C2.77832 16.7311 6.80263 20.7554 11.7669 20.7554Z"
-                stroke="#A7AAB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M18.0186 18.4854L21.5426 22.0002" stroke="#A7AAB5" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </div>
+    <!-- Меню для філтрації | Списки з треками -->
+    <div class="filters-flex-container">
+      <!-- Меню зліва для філтрації -->
+      <div class="filters">
+        <!-- Кнопка "Фільтр" -->
+        <button id="filter-btn"
+          onclick="console.log('aaaaaaa'); if (document.getElementById('accordion__button1').style.display === 'none') { document.getElementById('accordion__button1').style.display = 'block'; document.getElementById('accordion__button2').style.display = 'block'; document.getElementById('accordion__button3').style.display = 'block'; document.getElementById('accordion__button4').style.display = 'block'; } else { document.getElementById('accordion__button1').style.display = 'none'; document.getElementById('accordion__button2').style.display = 'none'; document.getElementById('accordion__button3').style.display = 'none'; document.getElementById('accordion__button4').style.display = 'none'; }"
+          class="filter-btn" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 9H19" stroke="white" stroke-width="2" stroke-linecap="round" />
+            <path d="M5 15H13" stroke="white" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          Filter
+        </button>
+        <!-- Аккордіон ( випадающий список ) -->
+        <button id="accordion__button1" class="accordion__button">Mood</button>
+        <div class="accordion__panel">
+          <ul class="accordion__panel-list">
+            <li>
+              <input class="form__checkbox" type="checkbox" name="chill" id="chill" />
+              <label class="form__checkbox-label" for="chill"></label>
+              <label for="chill">Chill</label>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" name="dramatic" id="dramatic" />
+              <label class="form__checkbox-label" for="dramatic"></label>
+              <label for="dramatic">Dramatic</label>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" name="happy" id="happy" />
+              <label class="form__checkbox-label" for="happy"></label>
+              <label for="happy">Happy</label>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" name="sad" id="sad" />
+              <label class="form__checkbox-label" for="sad"></label>
+              <label for="sad">Sad</label>
+            </li>
+            </li>
+          </ul>
         </div>
-        <!-- Випадаючі списки для філтрації -->
-        <ul class="dropdowns-ul list">
-          <li class="nav-item dropdown">
-            <button id="dropdown-btn-popular" class="dropdown-toggle" data-target="dropdown-menu1" type="button">
-              Popular
-              <div class="dropdown-btn"></div>
-            </button>
-            <ul id="dropdown-menu1" class="dropdown-menu list hide">
-              <li><a id="dropdown-popular" class="dropdown-item link">Popular</a></li>
-              <li><a id="dropdown-newest" class="dropdown-item link">Newest</a></li>
-              <li><a id="dropdown-relevant" class="dropdown-item link">Relevant</a></li>
-              <li><a id="dropdown-none" class="dropdown-item link">None</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <button id="dropdown-btn-duration" class="dropdown-toggle" data-target="dropdown-menu2" type="button">
-              Duration
-              <div class="dropdown-btn"></div>
-            </button>
-            <ul id="dropdown-menu2" class="dropdown-menu list hide">
-              <li><a id="dropdown-short" class="dropdown-item link">Short</a></li>
-              <li><a id="dropdown-medium" class="dropdown-item link">Medium</a></li>
-              <li><a id="dropdown-long" class="dropdown-item link">Long</a></li>
-              <li><a id="dropdown-very-long" class="dropdown-item link">Very long</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <button id="dropdown-btn-vi" class="dropdown-toggle vocal" data-target="dropdown-menu3" type="button">
-              Vocal & Instrument
-              <div style="position: relative; top: -3px" class="dropdown-btn"></div>
-            </button>
-            <ul id="dropdown-menu3" style="width: 260px" class="dropdown-menu list hide">
-              <li><a id="dropdown-vocal" class="dropdown-item link">Vocal</a></li>
-              <li><a id="dropdown-instrument" class="dropdown-item link">Instrument</a></li>
-              <li><a id="dropdown-vi" style="width: 260px" class="dropdown-item link">Vocal & Instrument</a></li>
-              <li><a id="dropdown-nonee" class="dropdown-item link">None</a></li>
-            </ul>
-          </li>
-        </ul>
+        <!-- Аккордіон ( випадающий список ) -->
+        <button id="accordion__button2" class="accordion__button">Instrument</button>
+        <div class="accordion__panel">
+          <ul class="accordion__panel-list">
+            <li>
+              <input class="form__checkbox" type="checkbox" name="chill" id="chill" />
+              <label class="form__checkbox-label" for="chill"></label>
+              <label for="chill">Chill</label>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" name="dramatic" id="dramatic" />
+              <label class="form__checkbox-label" for="dramatic"></label>
+              <label for="dramatic">Dramatic</label>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" name="happy" id="happy" />
+              <label class="form__checkbox-label" for="happy"></label>
+              <label for="happy">Happy</label>
+            </li>
+          </ul>
+        </div>
+        <!-- Аккордіон ( випадающий список ) -->
+        <button id="accordion__button3" class="accordion__button">Theme</button>
+        <div class="accordion__panel">
+          <ul class="accordion__panel-list">
+            <li>
+              <input class="form__checkbox" type="checkbox" name="chill" id="chill" />
+              <label class="form__checkbox-label" for="chill"></label>
+              <label for="chill">Chill</label>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" name="dramatic" id="dramatic" />
+              <label class="form__checkbox-label" for="dramatic"></label>
+              <label for="dramatic">Dramatic</label>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" name="happy" id="happy" />
+              <label class="form__checkbox-label" for="happy"></label>
+              <label for="happy">Happy</label>
+            </li>
+          </ul>
+        </div>
+        <!-- Аккордіон ( випадающий список ) -->
+        <button id="accordion__button4" class="accordion__button">Genre</button>
+        <div class="accordion__panel">
+          <ul class="accordion__panel-list">
+            <li>
+              <input class="form__checkbox" type="checkbox" name="chill" id="chill" />
+              <label class="form__checkbox-label" for="chill"></label>
+              <label for="chill">Chill</label>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" name="dramatic" id="dramatic" />
+              <label class="form__checkbox-label" for="dramatic"></label>
+              <label for="dramatic">Dramatic</label>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" name="happy" id="happy" />
+              <label class="form__checkbox-label" for="happy"></label>
+              <label for="happy">Happy</label>
+            </li>
+          </ul>
+        </div>
       </div>
-      <!-- Меню для філтрації | Списки з треками -->
-      <div class="filters-flex-container">
-        <!-- Меню зліва для філтрації -->
-        <div class="filters">
-          <!-- Кнопка "Фільтр" -->
-          <button id="filter-btn" class="filter-btn" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M5 9H19" stroke="white" stroke-width="2" stroke-linecap="round" />
-              <path d="M5 15H13" stroke="white" stroke-width="2" stroke-linecap="round" />
-            </svg>
-            Filter
-          </button>
-          <!-- Аккордіон ( випадающий список ) -->
-          <button class="accordion__button">Mood</button>
-          <div class="accordion__panel">
-            <ul class="accordion__panel-list">
-              <li>
-                <input class="form__checkbox" type="checkbox" name="chill" id="chill" />
-                <label class="form__checkbox-label" for="chill"></label>
-                <label for="chill">Chill</label>
-              </li>
-              <li>
-                <input class="form__checkbox" type="checkbox" name="dramatic" id="dramatic" />
-                <label class="form__checkbox-label" for="dramatic"></label>
-                <label for="dramatic">Dramatic</label>
-              </li>
-              <li>
-                <input class="form__checkbox" type="checkbox" name="happy" id="happy" />
-                <label class="form__checkbox-label" for="happy"></label>
-                <label for="happy">Happy</label>
-              </li>
-              <li>
-                <input class="form__checkbox" type="checkbox" name="sad" id="sad" />
-                <label class="form__checkbox-label" for="sad"></label>
-                <label for="sad">Sad</label>
-              </li>
-              </li>
-            </ul>
-          </div>
-          <!-- Аккордіон ( випадающий список ) -->
-          <button class="accordion__button">Instrument</button>
-          <div class="accordion__panel">
-            <ul class="accordion__panel-list">
-              <li>
-                <input class="form__checkbox" type="checkbox" name="chill" id="chill" />
-                <label class="form__checkbox-label" for="chill"></label>
-                <label for="chill">Chill</label>
-              </li>
-              <li>
-                <input class="form__checkbox" type="checkbox" name="dramatic" id="dramatic" />
-                <label class="form__checkbox-label" for="dramatic"></label>
-                <label for="dramatic">Dramatic</label>
-              </li>
-              <li>
-                <input class="form__checkbox" type="checkbox" name="happy" id="happy" />
-                <label class="form__checkbox-label" for="happy"></label>
-                <label for="happy">Happy</label>
-              </li>
-            </ul>
-          </div>
-          <!-- Аккордіон ( випадающий список ) -->
-          <button class="accordion__button">Theme</button>
-          <div class="accordion__panel">
-            <ul class="accordion__panel-list">
-              <li>
-                <input class="form__checkbox" type="checkbox" name="chill" id="chill" />
-                <label class="form__checkbox-label" for="chill"></label>
-                <label for="chill">Chill</label>
-              </li>
-              <li>
-                <input class="form__checkbox" type="checkbox" name="dramatic" id="dramatic" />
-                <label class="form__checkbox-label" for="dramatic"></label>
-                <label for="dramatic">Dramatic</label>
-              </li>
-              <li>
-                <input class="form__checkbox" type="checkbox" name="happy" id="happy" />
-                <label class="form__checkbox-label" for="happy"></label>
-                <label for="happy">Happy</label>
-              </li>
-            </ul>
-          </div>
-          <!-- Аккордіон ( випадающий список ) -->
-          <button class="accordion__button">Genre</button>
-          <div class="accordion__panel">
-            <ul class="accordion__panel-list">
-              <li>
-                <input class="form__checkbox" type="checkbox" name="chill" id="chill" />
-                <label class="form__checkbox-label" for="chill"></label>
-                <label for="chill">Chill</label>
-              </li>
-              <li>
-                <input class="form__checkbox" type="checkbox" name="dramatic" id="dramatic" />
-                <label class="form__checkbox-label" for="dramatic"></label>
-                <label for="dramatic">Dramatic</label>
-              </li>
-              <li>
-                <input class="form__checkbox" type="checkbox" name="happy" id="happy" />
-                <label class="form__checkbox-label" for="happy"></label>
-                <label for="happy">Happy</label>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- Списки з треками -->
-        <div class="musics">
-          <ul class="musics-ul list">
-            <?php
-            for ($i = 0; $i < 15; $i++) {
+      <!-- Списки з треками -->
+      <div class="musics">
+        <ul class="musics-ul list">
+          <?php
+          $db = new App\Database();
+          $stmt = $db->conn->prepare("SELECT * FROM `musics`");
+          $stmt->execute();
+          $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+          if (count($results) > 0) {
+            foreach ($results as $result) {
               ?>
-              <li class="musics-ul-item">
-                <img class="track-cover-img" width="280px" src="./assets/images/music-banner.jpg"
-                  alt="" />
-                <div class="music-info">
-                  <p class="name-of-music">John doe</p>
-                  <p class="name-of-author">John Doe</p>
+              <li class="musics__item">
+                <img class="musics__item-image" width="280px" src="<?= $result['image']; ?>" alt="" />
+                <div class="musics__item-info">
+                  <p class="musics__item-title">
+                    <?= $result['title']; ?>
+                  </p>
+                  <p class="musics__item-author">
+                    <?= $result['author']; ?>
+                  </p>
                   <hr />
-                  <div class="music-info-flex">
+                  <div class="musics__item-info-flex">
                     <ul class="interactive-music-ul">
                       <li class="interactive-music-item save">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#A7AAB5">
-                          <path
-                            d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5"
-                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                          <path d="M5.83301 8.33334L9.99967 12.5L14.1663 8.33334"  stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                          <path d="M10 12.5V2.5" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        </svg>
+                        <a href="..<?= $result['dir']; ?>">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            stroke="#A7AAB5">
+                            <path
+                              d="M17.5 12.5V15.8333C17.5 16.2754 17.3244 16.6993 17.0118 17.0118C16.6993 17.3244 16.2754 17.5 15.8333 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V12.5"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.83301 8.33334L9.99967 12.5L14.1663 8.33334" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M10 12.5V2.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </a>
                       </li>
                       <li class="interactive-music-item">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -276,28 +289,42 @@
                         </svg>
                       </li>
                     </ul>
-                    <button class="play-music-btn" type="button">
-                      <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                        viewBox="0 0 32 32" fill="none">
-                        <path
-                          d="M21 14.2679C22.3333 15.0378 22.3333 16.9623 21 17.7321L15 21.1962C13.6667 21.966 12 21.0037 12 19.4641L12 12.5359C12 10.9963 13.6667 10.034 15 10.8038L21 14.2679Z"
-                          fill="#37C25E" />
-                        <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="#37C25E" />
-                      </svg>
-                    </button>
+                    <!-- <button class="play-music-btn" type="button">
+                            <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                              viewBox="0 0 32 32" fill="none">
+                              <path
+                                d="M21 14.2679C22.3333 15.0378 22.3333 16.9623 21 17.7321L15 21.1962C13.6667 21.966 12 21.0037 12 19.4641L12 12.5359C12 10.9963 13.6667 10.034 15 10.8038L21 14.2679Z"
+                                fill="#37C25E" />
+                              <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="#37C25E" />
+                            </svg>
+                          </button> -->
+                    <div class="audio-player">
+                      <audio id="audio" src="..<?= $result['dir']; ?>"></audio>
+                      <button id="playButton" class="play-button"></button>
+                    </div>
                   </div>
                 </div>
               </li>
-            <?
+              <?
             }
-            ?>
-          </ul>
+          } else {
+            echo "Музики немає";
+            return 1;
+          }
+          ?>
+        </ul>
+        <?php
+        if (count($results) > 15) {
+          ?>
           <div class="center_container">
             <button style="margin-top: 24px;" class="button stroke-btn" type="button">View More</button>
           </div>
-        </div>
+          <?
+        }
+        ?>
       </div>
-
     </div>
-  </section>
+
+  </div>
+</section>
 <?php require_once "../app/blocks/footer.php"; ?>
