@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 /* -------------- Reset style ----------------- */
 * {
   box-sizing: border-box;
 }
 body {
   background: #151a27;
-  font-family: "Poppins";
+  /* font-family: "Poppins"; */
+  font-family: "Montserrat", sans-serif;
 }
 h1,
 h2,
@@ -72,6 +74,8 @@ img {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  
+  box-shadow: 0px 20px 90px -12px rgba(61, 199, 95, 0.60); 
 }
 .button:hover {
   background: var(--translucent-main-color);
@@ -79,7 +83,7 @@ img {
 }
 .stroke-btn {
   background: var(--translucent-main-color);
-  color: var(--main-color);
+  color: var(--main-color); 
 }
 .stroke-btn:hover {
   background: var(--main-color);
@@ -90,7 +94,6 @@ img {
   background: var(--translucent-red-color);
   width: 100%;
   color: #fff;
-  font-family: Montserrat;
 }
 .stroke__red-btn:hover {
   background: var(--red-color);
@@ -111,6 +114,7 @@ img {
 .header {
   background-image: url("../assets/images/main-block-background.png");
   background-size: cover;
+  padding-bottom: 136px;
 }
 .logo-container {
   display: flex;
@@ -131,10 +135,128 @@ img {
 }
 .nav-item-link {
   color: #fff;
-  font-family: Plus Jakarta Sans;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
+}
+.navbar {
+  width: 100%;
+  display: none;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.navbar .menu-items {
+  display: flex;
+}
+
+.navbar .nav-container li {
+  list-style: none;
+}
+
+.navbar .nav-container a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover {
+  font-weight: bolder;
+}
+
+.nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--main-color);
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 60px;
+  background: #1e2538;
+  height: 100vh;
+  width: 120%;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+  align-items: center;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
 }
 /* ~~~~~~~~~~~~~~~~ Форма ~~~~~~~~~~~~~~~ */
 form {
@@ -204,7 +326,6 @@ label,
 input::placeholder,
 input {
   color: #fff;
-  font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -223,12 +344,46 @@ input {
   background: transparent;
   border: none;
   border-bottom: 1px solid #595959;
-  padding: 5px 0 5px 12px;
+  padding: 5px 0 5px 0px;
   margin-top: 7px;
 }
 input:focus {
   outline: none;
 }
+/* ------ Input type file  ------ */
+input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+/* .inputfile-1 + label {
+  color: #f1e5e6;
+  background-color: var(--main-color);
+} */
+.form__item-file + label {
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;
+  border-radius: 10px;
+  color: #f1e5e6;
+  background-color: var(--main-color);
+}
+.form__item-file + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  margin-right: 2.25em;
+}
+/* ----------------------------- */
 .input-flex-container {
   display: flex;
   gap: 8px;
@@ -283,7 +438,6 @@ input:focus {
 .form__bottom-description {
   margin-top: 12px;
   color: #f0f0f0;
-  font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -305,7 +459,7 @@ input:focus {
 /* первая и главная секция */
 .hero-section {
   margin: 77px 0 136px 0;
-  padding-top: 125px;
+  padding-top: 50px;
   height: 100vh;
   text-align: center;
 }
@@ -334,6 +488,7 @@ input:focus {
 
 /* вторая секция с вариантами где можно использовать нашу музыку */
 .downloads-music {
+  padding-top: 136px;
   padding-bottom: 80px;
 }
 .downloads-music > .container {
@@ -391,7 +546,6 @@ input:focus {
 }
 .found-flex-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 21px;
 }
@@ -400,6 +554,7 @@ input:focus {
 .dropdowns-ul {
   display: flex;
   gap: 16px;
+  margin-top: 10px;
 }
 .dropdown-toggle {
   background: transparent;
@@ -487,7 +642,7 @@ input:focus {
   color: #a7aab5;
   background-color: transparent;
   cursor: pointer;
-  padding: 2px 17px;
+  padding: 5px 17px;
   width: 100%;
   text-align: left;
   border: none;
@@ -495,6 +650,7 @@ input:focus {
   transition: 0.2s;
   border-radius: 7px;
   margin-top: 16px;
+  display: none;
 }
 .accordion__button:hover {
   background-color: #a7aab518;
@@ -513,6 +669,7 @@ input:focus {
   padding: 0 18px;
   display: none;
   overflow: hidden;
+  width: 100%;
 }
 .accordion__panel-list {
   list-style: none;
@@ -528,16 +685,17 @@ input:focus {
   gap: 16px;
   row-gap: 16px;
 }
-.musics-ul-item {
+.musics__item {
   width: 280px;
   border: none;
   border-radius: 12px;
   background: #1d212e;
 }
-.track-cover-img {
+.musics__itemmusics__item-images {
   border-radius: 12px 12px 0 0;
+  overflow: hidden;
 }
-.music-info {
+.musics__item-info {
   border-radius: 0px 0px 12px 12px;
   background: radial-gradient(
     242.23% 241.86% at 53.72% -58.25%,
@@ -547,15 +705,15 @@ input:focus {
   backdrop-filter: blur(34px);
   padding: 12px;
 }
-.name-of-music,
-.name-of-author {
+.musics__item-title,
+.musics__item-author {
   color: #fff;
   font-feature-settings: "liga" off;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
 }
-.name-of-author {
+.musics__item-author {
   color: #a7aab5;
   font-weight: 400;
 }
@@ -564,7 +722,7 @@ hr {
   stroke: #a7aab5;
   opacity: 0.2;
 }
-.music-info-flex {
+.musics__item-info-flex {
   display: flex;
   justify-content: space-between;
 }
@@ -573,7 +731,7 @@ hr {
   align-items: center;
   gap: 16px;
 }
-.interactive-music-item {
+.interactive-music-ul li {
   cursor: pointer;
 }
 .save {
@@ -682,7 +840,6 @@ hr {
 .personal__information-title,
 .personal__information-text,
 .personal__information-text span {
-  font-family: Montserrat;
   font-size: 26px;
   font-style: normal;
   font-weight: 700;
@@ -734,7 +891,6 @@ hr {
   gap: 13px;
   color: #fff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Montserrat;
   font-size: 17px;
   letter-spacing: 1.445px;
   background: transparent;
@@ -746,8 +902,12 @@ hr {
   background: #222a41;
   cursor: pointer;
 }
-.menu-button:active {background: var(--main-color);}
-.menu-button:active svg {fill: var(--main-color);}
+.menu-button:active {
+  background: var(--main-color);
+}
+.menu-button:active svg {
+  fill: var(--main-color);
+}
 .prem-button {
   padding: 138px 54px;
   display: flex;
@@ -761,14 +921,15 @@ hr {
   border-radius: 10px;
   color: #fff;
   text-align: center;
-  font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
 }
-.acc__info {margin-top: 18px;}
+.acc__info {
+  margin-top: 18px;
+}
 .acc__info > .container {
   display: flex;
   align-items: center;
@@ -785,7 +946,6 @@ hr {
 }
 .acc__nickname {
   color: #fff;
-  font-family: Montserrat;
   font-size: 28px;
   font-weight: 500;
   text-align: center;
@@ -808,9 +968,78 @@ hr {
 .premium-status > p {
   margin-right: 25px;
   color: #fff;
-  font-family: Montserrat;
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+/* ~~~~~~~~~~ Скорлл бар ~~~~~~~~~~ */
+/* Webkit (Safari/Chrome) */
+::-webkit-scrollbar {
+  width: 5px;
+  background: #222a41;
+}
+::-webkit-scrollbar-thumb {
+  background: #37c25e; /* Колір самого скроллбару */
+  border-radius: 5px;
+  transition: 0.2s;
+}
+/* Firefox */
+::-moz-scrollbar {
+  width: 5px;
+  background: #222a41;
+}
+::-moz-scrollbar-thumb {
+  background: #37c25e; /* Колір самого скроллбару */
+  border-radius: 5px;
+}
+/* Internet Explorer/Edge */
+body {
+  scrollbar-width: thin; /* 'thin', 'auto', або 'none' */
+  scrollbar-color: #37c25e; /* Колір самого скроллбару */
+}
+
+/* Webkit (Safari/Chrome) */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #53e97d; /* Колір фону скроллбару при наведенні */
+}
+/* Firefox */
+::-moz-scrollbar-thumb:hover {
+  background-color: #53e97d; /* Колір фону скроллбару при наведенні */
+}
+/* Internet Explorer/Edge */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #53e97d; /* Колір фону скроллбару при наведенні */
+}
+/* аудіо */
+/* .audio-player {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+.play-button {
+  width: 31px;
+  height: 31px;
+  border: 2px solid #37c25e;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+.play-button:before {
+  content: url("/public/assets/images/play.svg"); /* Unicode character for play icon */
+  font-size: 21px;
+  line-height: 1px;
+  text-align: center;
+  border: solid 2px #37c25e;
+  border-radius: 51px;
+  padding: 8px 4px 0px;
+  margin-left: -16px;
+}
+.play-button.paused:before {
+  content: url("/public/assets/images/pause.svg");
 }
