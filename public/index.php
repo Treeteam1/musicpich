@@ -3,10 +3,8 @@
   require_once "../vendor/autoload.php";
   require_once "../app/blocks/header.php"; 
 ?>
-<link rel="icon" href="./assets/images/logo.png" type="image/x-icon"/>
     <!-- Основний блок -->
     <section class="hero-section">
-      <!-- <div class="background-overlay"></div> -->
       <div class="container">
         <h1 class="hero-title">Epic music<br>experience</h1>
         <p class="hero-subtitle">

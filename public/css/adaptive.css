@@ -1,4 +1,13 @@
 @media (max-width: 1280px) {
+    /* Відстань між центральними пунктами у навігації */
+    .navigate__menu-items {gap: 41px;}
+
+    /* Навигація */
+    .nav-item-link {font-size: 13.5px;} /* Ссылки */
+    .logo {width: 35px;} /* Лого */
+    .websites-name {font-size: 17px;} /* Текст в лого */
+    .navigate__menu-items {gap: 35px;}
+
     .title {font-size: 31px;}
     .subtitle {font-size: 18px;}
 
@@ -10,6 +19,13 @@
     .footer__info-project {width: calc(100% / 1.3);}
 }
 @media (max-width: 1024px) {
+    /* Бургер меню */
+    .navigate__burger {display: block;}
+    .navigate__burger-lines {display: block;}
+
+    /* ПК меню */
+    .navigate__menu {display: none;}
+
     .form__image {display: none;}
     .button {
         padding: 14px 34px;
@@ -28,9 +44,6 @@
 }
 
 @media (max-width: 768px) {
-    /* Бургер меню */
-    .header__burger {display: block;}
-
     .title {font-size: 27px;}
     .subtitle {font-size: 16.5px;}
     label {font-size: 12.5px;}

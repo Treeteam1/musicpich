@@ -48,55 +48,72 @@ if (!empty($_SESSION['login'])) {
 <body>
   <!-- Навигация -->
   <header class="header">
-    <!-- Бургер меню -->
-    <div class="header__burger-nav">
-      <div class="header__burger-container">
-        <div class="header__burger">
-          <span></span>
-          <span></span>
-          <span></span>
+    <nav class="navigate">
+      <div class="container">
+        <!-- Бургер меню -->
+        <div class="navigate__burger">
+          <div class="navigate__burger-container">
+            <div class="navigate__burger-logo">
+              <div class="logo-container">
+                <img src="../public/assets/images/logo.png" alt="Website Logo" class="logo"/>
+                <a href="/public/index.php" class="websites-name">Musicpich</a>
+              </div>
+            </div>
+            <div class="navigate__burger-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="navigate__burger-menu">
+              <ul>
+                <li><a class="navigate__menu-item" href="#">Главная</a></li>
+                <li><a class="navigate__menu-item" href="#">FAQ</a></li>
+                <li><a class="navigate__menu-item" href="#">Связь с нами</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="header__burger-menu">
-          <ul>
-            <li class="nav-ul-item"><a class="link nav-item-link" href="#">Главная</a></li>
-            <li class="nav-ul-item"><a class="link nav-item-link" href="#">FAQ</a></li>
-            <li class="nav-ul-item"><a class="link nav-item-link" href="#">Связь с нами</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- ПК меню -->
-    <div class="container">
-      <div class="logo-container">
-        <img src="../public/assets/images/logo.png" alt="Website Logo" class="logo"/>
-        <a href="/public/index.php" class="websites-name link">Musicpich</a>
-      </div>
-      <nav class="navigate">
-        <ul class="list nav-ul">
-          <li class="nav-ul-item"><a class="link nav-item-link" href="#">Главная</a></li>
-          <li class="nav-ul-item"><a class="link nav-item-link" href="#">FAQ</a></li>
-          <li class="nav-ul-item"><a class="link nav-item-link" href="#">Связь с нами</a></li>
+        <!-- ПК меню -->
+        <ul class="navigate__menu">
+          <!-- Логотип -->
+          <li>
+            <div class="logo-container">
+              <img src="../public/assets/images/logo.png" alt="Website Logo" class="logo"/>
+              <a href="/public/index.php" class="websites-name">Musicpich</a>
+            </div>
+          </li>
+          <!-- Сама навігація -->
+          <li>
+            <div class="navigate__menu-items">
+              <a class="navigate__menu-item" href="#">Главная</a>
+              <a class="navigate__menu-item" href="#">FAQ</a>
+              <a class="navigate__menu-item" href="#">Связь с нами</a>
+            </div>
+          </li>
+          <!-- Кнопки справа -->
+          <li>
+            <div class="popup-btn-container">
+              <?php
+                if (!empty($_SESSION['login'])) {
+                  ?>
+                    <a href="/app/personal.php" class="button stroke-btn">
+                      <?= $_SESSION['login'] ?>
+                    </a>
+                  <?php
+                  if ($isAdmin) {
+                    ?>
+                      <a href="/app/admin/load_music.php" class="button stroke-btn">Админ панель</a>
+                    <?php
+                  }
+                } else {
+                  ?>
+                    <a href="/app/authorization.php" class="button">Войти</a>
+                    <a href="/app/registration.php" class="button stroke-btn">Зарегистрироваться</a>
+                  <?php
+                }
+              ?>
+            </div>
+          </li>
         </ul>
-      </nav>
-      <div class="popup-btn-container">
-        <?php
-        if (!empty($_SESSION['login'])) {
-          ?>
-          <a href="/app/personal.php" class="button stroke-btn">
-            <?= $_SESSION['login'] ?>
-          </a>
-          <?php
-          if ($isAdmin) {
-            ?>
-            <a href="/app/admin/load_music.php" class="button stroke-btn">Админ панель</a>
-            <?php
-          }
-        } else {
-          ?>
-          <a href="/app/authorization.php" class="button">Войти</a>
-          <a href="/app/registration.php" class="button stroke-btn">Зарегистрироваться</a>
-          <?php
-        }
-        ?>
       </div>
-    </div>
+    </nav>
